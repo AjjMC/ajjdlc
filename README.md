@@ -8,7 +8,7 @@
 
 ## Overview
 
-This datapack allows mapmakers to use the Mojang API for retrieving player data through the skin servers.
+This datapack allows mapmakers to retrieve player data through the skin servers.
 
 ## Installing
 
@@ -21,8 +21,8 @@ After this datapack has been added to the "datapacks" folder of a Minecraft worl
 | ``/function ajjdlc:__help``                           | Displays datapack command list                         |
 | ``/function ajjdlc:__install``                        | Installs datapack                                      |
 | ``/function ajjdlc:__manual``                         | Displays datapack manual link                          |
-| ``/function ajjdlc:__queryname {name:<player_name>}`` | Retrieves Base64-decoded value from query              |
-| ``/function ajjdlc:__queryid {id:<player_uuid>}``     | Retrieves Base64-decoded value from query              |
+| ``/function ajjdlc:__queryname {name:<player_name>}`` | Retrieves Base64-decoded ``value`` from query          |
+| ``/function ajjdlc:__queryid {id:<player_uuid>}``     | Retrieves Base64-decoded ``value`` from query          |
 | ``/function ajjdlc:__uninstall``                      | Uninstalls datapack                                    |
 | ``/function ajjdlc:__version``                        | Displays datapack version                              |
 | ``/function ajjdlc:_decode {data:<input_data>}``      | Runs ``/function ajjdlc:__decode`` without feedback    |
@@ -34,7 +34,27 @@ After this datapack has been added to the "datapacks" folder of a Minecraft worl
 > [!NOTE]
 > More information on the [Minecraft Wiki](https://minecraft.wiki/w/Mojang_API#Query_player's_skin_and_cape).
 
+Player data is retrieved using ``/function ajjdlc:__queryname {name:<player_name>}``, which uses a name as input, or ``/function ajjdlc:__queryid {id:<player_uuid>}``, using a UUID Int array instead. Upon requesting the data, the response looks as follows:
+
+```
+
+```
+
+where ``value`` is the Base64 encoding of the following:
+
+```
+
+```
+
+This is decoded and parsed to store the the NBT compound below in the ``ajjdlc:data out`` data storage NBT tag:
+
+```
+
+```
+
 ## Base64 Decoder
+
+The datapack's Base64 decoder can be used independently on input data with ``/function ajjdlc:__decode {data:<input_data>}``, and the output is stored in the ``ajjdlc:data out`` data storage NBT tag.
 
 ## Crediting
 
