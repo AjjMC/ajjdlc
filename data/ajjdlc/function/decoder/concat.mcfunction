@@ -1,0 +1,1 @@
+$data modify storage ajjdlc:data temp.out set value '$(out)$(out_char)'

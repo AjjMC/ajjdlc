@@ -1,0 +1,1 @@
+tellraw @a [{text:"Type "},{text:"/data get storage ajjdlc:data out",color:"green",click_event:{action:"suggest_command",command:"/data get storage ajjdlc:data out"},hover_event:{action:"show_text",value:"Click Here"}},{text:" to get latest successful response"}]

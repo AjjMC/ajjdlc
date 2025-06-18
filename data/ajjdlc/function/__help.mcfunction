@@ -1,0 +1,12 @@
+tellraw @s {text:"/function ajjdlc:__crediting",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__crediting"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__decode {data:<input_data>}",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__decode"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__help",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__help"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__install",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__install"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__manual",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__manual"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__queryname {name:<player_name>}",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__queryname"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__queryid {id:<player_uuid>}",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__queryid"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__uninstall",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__uninstall"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:__version",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:__version"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:_decode {data:<input_data>}",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:_decode"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:_queryname {name:<player_name>}",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:_queryname"},hover_event:{action:"show_text",value:"Click Here"}}
+tellraw @s {text:"/function ajjdlc:_queryid {id:<player_uuid>}",color:"green",click_event:{action:"suggest_command",command:"/function ajjdlc:_queryid"},hover_event:{action:"show_text",value:"Click Here"}}

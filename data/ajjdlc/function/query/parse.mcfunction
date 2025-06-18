@@ -1,0 +1,1 @@
+$data modify storage ajjdlc:data out set value $(out)
