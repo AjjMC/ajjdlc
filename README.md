@@ -34,7 +34,7 @@ After this datapack has been added to the "datapacks" folder of a Minecraft worl
 > [!NOTE]
 > More information on the [Minecraft Wiki](https://minecraft.wiki/w/Mojang_API#Query_player's_skin_and_cape).
 
-Player data is retrieved using ``/function ajjdlc:__queryname {name:<player_name>}``, which uses a name as input, or ``/function ajjdlc:__queryid {id:<player_uuid>}``, using a UUID Int array instead. Upon requesting the data, the response looks as follows:
+Player data is retrieved using ``/function ajjdlc:__queryname {name:<player_name>}``, which uses a name as input, or ``/function ajjdlc:__queryid {id:<player_uuid>}``, using a UUID Int array instead. Upon requesting the data, the API response looks as follows:
 
 ```
 {
@@ -59,7 +59,10 @@ where ``value`` is the Base64 encoding of the following:
     "signatureRequired": true,
     "textures": {
         "SKIN": {
-            "url": "http://textures.minecraft.net/texture/b5820917b85556384b9cc97073d0a55c07599cabc3f4e4785d93937f8ba887e1"
+            "url": "http://textures.minecraft.net/texture/b5820917b85556384b9cc97073d0a55c07599cabc3f4e4785d93937f8ba887e1",
+            "metadata": {
+                "model": "slim"
+            }
         },
         "CAPE": {
             "url": "http://textures.minecraft.net/texture/17912790ff164b93196f08ba71d0e62129304776d0f347334f8a6eae509f8a56"
@@ -75,6 +78,9 @@ This is decoded and parsed to store the the NBT compound below in the ``ajjdlc:d
     profileName: "Ajj",
     textures: {
         SKIN: {
+            metadata: {
+                model: "slim"
+            }
             url: "http://textures.minecraft.net/texture/b5820917b85556384b9cc97073d0a55c07599cabc3f4e4785d93937f8ba887e1"
         },
         CAPE: {
@@ -86,6 +92,8 @@ This is decoded and parsed to store the the NBT compound below in the ``ajjdlc:d
     timestamp: 1750462597883L
 }
 ```
+
+The above allows one to determine the username (proper case) in ``ajjdlc:data out.profileName``, the UUID as a string in ``ajjdlc:data out.profileId``, the skin model in ``ajjdlc:data out.textures.SKIN.metadata.model``, the skin url in ``ajjdlc:data out.textures.SKIN.url``, the cape url in ``ajjdlc:data out.textures.CAPE.url``, and the current timestamp in ``ajjdlc:data out.timestamp``.
 
 ## Base64 Decoder
 
