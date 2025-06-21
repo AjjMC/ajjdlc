@@ -43,6 +43,7 @@ Player data is retrieved using ``/function ajjdlc:__queryname {name:<player_name
     "properties": [
         {
             "name": "textures",
+            "signature": "lLmK1Bl/7iO1xE4..."
             "value": "ewogICJ0aW1lc3R..."
         }
     ]
@@ -75,25 +76,35 @@ This is decoded and parsed to store the the NBT compound below in the ``ajjdlc:d
 
 ```
 {
+    timestamp: 1750462597883L,
+    profileId: "a3c12f1a8b254e989e4ee2ff694236af",
     profileName: "Ajj",
+    signatureRequired: 1b,
     textures: {
         SKIN: {
+            url: "http://textures.minecraft.net/texture/b5820917b85556384b9cc97073d0a55c07599cabc3f4e4785d93937f8ba887e1",
             metadata: {
                 model: "slim"
             }
-            url: "http://textures.minecraft.net/texture/b5820917b85556384b9cc97073d0a55c07599cabc3f4e4785d93937f8ba887e1"
         },
         CAPE: {
             url: "http://textures.minecraft.net/texture/17912790ff164b93196f08ba71d0e62129304776d0f347334f8a6eae509f8a56"
         }
-    },
-    profileId: "a3c12f1a8b254e989e4ee2ff694236af",
-    signatureRequired: 1b,
-    timestamp: 1750462597883L
+    }
 }
 ```
 
-The above allows one to determine the username (proper case) in ``ajjdlc:data out.profileName``, the UUID as a string in ``ajjdlc:data out.profileId``, the skin model in ``ajjdlc:data out.textures.SKIN.metadata.model``, the skin url in ``ajjdlc:data out.textures.SKIN.url``, the cape url in ``ajjdlc:data out.textures.CAPE.url``, and the current timestamp in ``ajjdlc:data out.timestamp``.
+As such, the following data can be extracted for a given player:
+
+| Data Storage NBT Tag                             | Description                                  | Type           |
+|:-------------------------------------------------|:---------------------------------------------|:---------------|
+| ``ajjdlc:data out.timestamp``                    | Unix time                                    | Long           |
+| ``ajjdlc:data out.profileId``                    | Player UUID                                  | String         |
+| ``ajjdlc:data out.profileName``                  | Player name                                  | String         |
+| ``ajjdlc:data out.signatureRequired``            | Whether the request is signed, always ``1b`` | Byte (Boolean) |
+| ``ajjdlc:data out.textures.SKIN.url``            | URL unique per skin texture                  | String         |
+| ``ajjdlc:data out.textures.SKIN.metadata.model`` | Skin model, none unless ``"slim"``           | String or N/A  |
+| ``ajjdlc:data out.textures.CAPE.url``            | URL unique per cape texture                  | String         |
 
 ## Base64 Decoder
 
