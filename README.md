@@ -1,6 +1,6 @@
 # A DLC Library for Minecraft Mapmaking
 
-> **AVAILABLE ON 1.21.7**
+> **AVAILABLE ON 1.21.8**
 >
 > **[CLICK HERE TO DOWNLOAD](https://github.com/AjjMC/ajjdlc/archive/refs/heads/main.zip)**
 >
